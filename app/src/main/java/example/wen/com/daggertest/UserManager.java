@@ -1,12 +1,17 @@
 package example.wen.com.daggertest;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
+
 
 /**
  * Created by wen on 2017/11/8.
  */
-
+@Singleton    //当前类为单例模式
 public class UserManager {
+
+    private String TAG = "UserManager";
+
     ApiServer mApiServer;
     UserStore mUserStore;
 
@@ -15,4 +20,10 @@ public class UserManager {
         mApiServer = apiServer;
         mUserStore = userStore;
     }
+
+
+    public void loge() {
+        System.out.println( mApiServer.getClass().getName() + "     " + mUserStore.getClass().getName());
+    }
+
 }

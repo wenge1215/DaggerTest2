@@ -1,9 +1,7 @@
 package example.wen.com.daggertest;
 
+import android.content.Context;
 import android.util.Log;
-
-import dagger.Module;
-import dagger.Provides;
 
 
 /**
@@ -12,6 +10,13 @@ import dagger.Provides;
 
 public class UserStore {
     private static final String TAG = "UserStore";
+    private final Context mContext;
+
+
+    public UserStore(Context context) {
+        this.mContext = context;
+    }
+
 
     private void systemOut(String sys) {
         Log.e(TAG, sys);

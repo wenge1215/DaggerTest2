@@ -12,13 +12,13 @@ import javax.inject.Inject;
 
 
 public class MyApp extends Application {
-    @Inject
+//    @Inject
     SharedPreferences mSharedPreferences;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        AppComponet build = DaggerAppComponet.builder().appModule(new AppModule(this)).build();
-        build.inject(this);
+//        AppComponet build = DaggerAppComponet.builder().appModule(new AppModule(this)).build();
+//        build.inject(this);
     }
 }

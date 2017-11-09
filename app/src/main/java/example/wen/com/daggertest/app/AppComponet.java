@@ -9,7 +9,7 @@ import dagger.Component;
  * 备注：
  */
 
-@Component(modules = {AppModule.class})
+//@Component(modules = {AppModule.class})
 public interface AppComponet {
     void inject(Application application) ;
 }

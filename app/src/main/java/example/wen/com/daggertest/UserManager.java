@@ -7,7 +7,7 @@ import javax.inject.Singleton;
 /**
  * Created by wen on 2017/11/8.
  */
-@Singleton    //当前类为单例模式
+
 public class UserManager {
 
     private String TAG = "UserManager";

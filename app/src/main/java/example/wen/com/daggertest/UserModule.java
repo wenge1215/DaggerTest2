@@ -2,8 +2,12 @@ package example.wen.com.daggertest;
 
 import android.content.Context;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by wen on 2017/11/8.
@@ -24,10 +28,21 @@ public class UserModule {
      *
      * @return
      */
+
+
     @Provides
-    protected ApiServer providerApiServer() {
-        return new ApiServer(mContext);
+    @Test
+//    @Named("dev")
+    protected ApiServer providerApiServerForDev(OkHttpClient okHttpClient) {
+        return new ApiServer(okHttpClient);
     }
+
+////    @Release
+//    @Named("release")
+//    @Provides
+//    protected ApiServer providerApiServerForRelease(OkHttpClient okHttpClient) {
+//        return new ApiServer(okHttpClient);
+//    }
 
     @Provides
     protected UserStore providerUserStore() {
@@ -37,6 +52,9 @@ public class UserModule {
     @Provides
     public Person providesPersion(){
         return new Person();
+    }
+    @Provides String providerStr(){
+        return "如果需要提供的对象包含参数";
     }
 
     /**

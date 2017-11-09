@@ -29,4 +29,7 @@ dependencies {
     compile 'com.google.dagger:dagger:2.4'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'     //javax 注解
+
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
 }

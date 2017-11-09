@@ -6,7 +6,7 @@ import dagger.Component;
  * Created by wen on 2017/11/8.
  * 注入器（提供依赖的桥梁）
  */
-@Component(modules = {UserModule.class})
+@Component(modules = {UserModule.class,HttptModule.class})
 public interface UserComponet {
     /**
      * 与activity关联

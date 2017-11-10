@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DaggerTest2.iml" filepath="$PROJECT_DIR$/DaggerTest2.iml" />
-      <module fileurl="file://F:\MyCodeTest\DaggerTest2\DaggerTest2.iml" filepath="F:\MyCodeTest\DaggerTest2\DaggerTest2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://F:\MyCodeTest\DaggerTest2\app\app.iml" filepath="F:\MyCodeTest\DaggerTest2\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/projectframework/projectframework.iml" filepath="$PROJECT_DIR$/projectframework/projectframework.iml" />
       <module fileurl="file://E:\workspace\a_workspace\DouYu-master\DaggerTest2\projectframework\projectframework.iml" filepath="E:\workspace\a_workspace\DouYu-master\DaggerTest2\projectframework\projectframework.iml" />
     </modules>

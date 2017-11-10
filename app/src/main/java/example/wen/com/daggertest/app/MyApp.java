@@ -1,6 +1,7 @@
 package example.wen.com.daggertest.app;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import javax.inject.Inject;
@@ -12,13 +13,19 @@ import javax.inject.Inject;
 
 
 public class MyApp extends Application {
-//    @Inject
+    @Inject
     SharedPreferences mSharedPreferences;
+    @Inject
+    Context mApplication;
+    public static  AppComponet mAppComponet;
 
     @Override
     public void onCreate() {
         super.onCreate();
-//        AppComponet build = DaggerAppComponet.builder().appModule(new AppModule(this)).build();
-//        build.inject(this);
+
+        mAppComponet = DaggerAppComponet.builder()
+                .appModule(new AppModule(getApplicationContext()))
+                .build();
+        mAppComponet.inject(this);
     }
 }

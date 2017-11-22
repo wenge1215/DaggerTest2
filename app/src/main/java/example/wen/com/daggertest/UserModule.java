@@ -1,9 +1,7 @@
 package example.wen.com.daggertest;
 
 import android.content.Context;
-
-import javax.inject.Named;
-import javax.inject.Singleton;
+import android.util.Log;
 
 import dagger.Module;
 import dagger.Provides;
@@ -13,10 +11,12 @@ import okhttp3.OkHttpClient;
  * Created by wen on 2017/11/8.
  * 提供依赖的管理器
  */
-@Module
+@Module/*(includes = HttptModule.class)*/
 public class UserModule {
 
     private Context mContext;
+    private static final String TAG = "UserModule";
+
 
     public UserModule(Context context) {
         mContext = context;
@@ -32,17 +32,24 @@ public class UserModule {
 
     @Provides
     @Test
-//    @Named("dev")
     protected ApiServer providerApiServerForDev(OkHttpClient okHttpClient) {
+        Log.e(TAG,"Test:     "+okHttpClient.hashCode());
         return new ApiServer(okHttpClient);
     }
 
-////    @Release
-//    @Named("release")
-//    @Provides
-//    protected ApiServer providerApiServerForRelease(OkHttpClient okHttpClient) {
-//        return new ApiServer(okHttpClient);
-//    }
+
+    @Release
+    @Provides
+    protected ApiServer providerApiServerForRelease(OkHttpClient okHttpClient) {
+        Log.e(TAG,"Release:     "+okHttpClient.hashCode());
+        return new ApiServer(okHttpClient);
+    }
+
+    @Provides
+    ApiServer providerApiServer(OkHttpClient okHttpClient) {
+        Log.e(TAG,"     "+okHttpClient.hashCode());
+        return new ApiServer(okHttpClient);
+    }
 
     @Provides
     protected UserStore providerUserStore() {
@@ -50,10 +57,12 @@ public class UserModule {
     }
 
     @Provides
-    public Person providesPersion(){
+    public Person providesPersion() {
         return new Person();
     }
-    @Provides String providerStr(){
+
+    @Provides
+    String providerStr() {
         return "如果需要提供的对象包含参数";
     }
 

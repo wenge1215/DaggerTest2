@@ -5,13 +5,14 @@ import android.content.SharedPreferences;
 
 import dagger.Module;
 import dagger.Provides;
+import example.wen.com.daggertest.ParApp;
 
 /**
  * Created by WENGE on 2017/11/9.
  * 备注：
  */
 
-//@Module
+@Module
 public class AppModule {
     private Context mApplication;
 
@@ -25,7 +26,7 @@ public class AppModule {
      *
      * @return
      */
-//    @Provides
+    @Provides
     public SharedPreferences provideSharedPreFerences() {
         return mApplication.getSharedPreferences("test_sp", Context.MODE_PRIVATE);
     }
@@ -35,7 +36,8 @@ public class AppModule {
      *
      * @return
      */
-//    @Provides
+    @ParApp
+    @Provides
     public Context provideContext() {
         return mApplication.getApplicationContext();
     }

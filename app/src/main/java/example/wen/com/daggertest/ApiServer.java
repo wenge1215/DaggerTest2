@@ -1,14 +1,6 @@
 package example.wen.com.daggertest;
 
-import android.content.Context;
-import android.util.Log;
-
-import java.util.List;
-
-import javax.inject.Inject;
-
 import okhttp3.OkHttpClient;
-import retrofit2.Call;
 
 /**
  * Created by wen on 2017/11/8.

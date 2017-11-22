@@ -1,7 +1,5 @@
 package example.wen.com.daggertest;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -12,8 +10,11 @@ import okhttp3.OkHttpClient;
 @Module
 public class HttptModule {
 
+
     @Provides
-    OkHttpClient providesHttp(){
+//    @Singleton
+    @ParActivity
+    OkHttpClient providesHttp() {
         return new OkHttpClient.Builder().build();
     }
 }
